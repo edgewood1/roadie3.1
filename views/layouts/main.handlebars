@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Eat-da-burger</title>
+		<meta charset="UTF-8">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+	</head>
+	<body>
+		{{!-- nav --}}
+		<div class="nav">
+			{{{ body }}}
+		</div>
+		{{!-- modals --}}
+
+		{{> modals}}
+
+		<div class="container">
+			{{!-- title --}}
+			{{> title}}
+			{{!-- map / bucketList --}}
+			{{> map_bucket}}
+			{{> schedule}}
+			{{> toDo_daily}}
+		</div>
+
+		{{!-- packages--}}
+		{{!-- jquery --}}
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		{{!-- materialize --}}
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+		{{!-- moment --}}
+		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+		{{!-- google Maps --}}
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjqIlwccRdfx6NRHDBZXYJoy3-NJB4eQk&libraries=places"></script>
+		{{!-- javascript files --}}
+		<script src="/dist/bundle.js"></script>
+		{{!-- end --}}
+	</body>
+</html>

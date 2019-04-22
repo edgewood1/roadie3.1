@@ -3,8 +3,13 @@ var router = express.Router();
 var admin = require("firebase-admin");
 require("dotenv").config();
 // var serviceAccount = require("/Users/meldejesus/Desktop/firebase/Roadie3-204342809abd.json");
-
-var serviceAccount = require("../keys");
+var serviceAccount;
+console.log("here = ", process.env.NODE_ENV);
+if (process.env.NODE_ENV == "development") {
+  serviceAccount = require("../keys");
+} else if (process.env.NODE_ENV == "production") {
+  serviceAccount = require("../../config/roadie3.json");
+}
 console.log(serviceAccount);
 JSON.stringify(serviceAccount);
 admin.initializeApp({

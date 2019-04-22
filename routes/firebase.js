@@ -1,8 +1,12 @@
 var express = require("express");
 var router = express.Router();
 var admin = require("firebase-admin");
-var serviceAccount = require("/Users/meldejesus/Desktop/firebase/Roadie3-204342809abd.json");
+require("dotenv").config();
+// var serviceAccount = require("/Users/meldejesus/Desktop/firebase/Roadie3-204342809abd.json");
 
+var serviceAccount = require("../keys");
+console.log(serviceAccount);
+JSON.stringify(serviceAccount);
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://fir-counter-56e8f.firebaseio.com/"

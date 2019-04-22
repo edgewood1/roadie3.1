@@ -93,7 +93,7 @@ function saveSchedule() {
   });
 }
 // save bucketlist?
-$("#schedule").on("click", { param: readOldEvents }, saveSchedule);
+$("#schedule").on("click", { param: schedule.readOldEvents }, saveSchedule);
 
 /// selecting one old from list of old places
 

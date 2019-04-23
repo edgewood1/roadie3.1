@@ -1,14 +1,18 @@
 var express = require("express");
 var router = express.Router();
 var admin = require("firebase-admin");
-
+const path = require("path");
 // var serviceAccount = require("/Users/meldejesus/Desktop/firebase/Roadie3-204342809abd.json");
 
 console.log("here = ", process.env.NODE_ENV);
 if (process.env.NODE_ENV == "development") {
   require("dotenv").config();
 } else if (process.env.NODE_ENV == "production") {
-  require("dotenv").config({ path: "../../config/roadie3" });
+  // require("dotenv").config({ path: "../../config/roadie3" });
+  console.log(path.join(__dirname, "./../../config/roadie3/.env"));
+  require("dotenv").config({
+    path: path.join(__dirname, "./../../config/roadie3/.env")
+  });
 }
 
 var serviceAccount = require("../keys.js");
